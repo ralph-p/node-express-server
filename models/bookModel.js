@@ -2,20 +2,18 @@ const mongoose = require('mongoose')
 
 const bookSchema = mongoose.Schema(
     {
-        name: {
+        title: {
             type: String,
             required: [true, "Please enter a book name"]
         },
-        rating: {
-            type: Number,
-            required: true,
-            default: 0
+        author: {
+            type: String,
         },
         description: {
             type: String,
             required: true,
         },
-        image: {
+        coverImage: {
             type: String,
             required: false,
         }
@@ -26,6 +24,6 @@ const bookSchema = mongoose.Schema(
 )
 
 
-const Book = mongoose.model('Product', bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;
